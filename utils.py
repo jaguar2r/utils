@@ -47,30 +47,6 @@ def filtrar_dados_por_intervalo_de_datas(data_frame, coluna_data, data_inicial, 
     if datas_validas:
         return data_frame[data_frame[coluna_data].between(data_inicial, data_final)]
 
-def remover_caracteres_especificos(lista_strings):
-    """
-    Remove caracteres específicos de strings em uma lista.
-
-    Parâmetros:
-    lista_strings (list): Lista de strings.
-
-    Retorna:
-    list: Lista de strings com caracteres específicos removidos.
-    """
-    lista_filtrada = []
-    for item in lista_strings:
-        if (item.find('_') > 0):
-            loc_carac = item.find('_')
-            novo_item = item[:loc_carac]
-            lista_filtrada.append(novo_item)
-        elif (item.find('-') > 0):
-            loc_carac = item.find('-')
-            novo_item = item[:loc_carac]
-            lista_filtrada.append(novo_item)
-        else:
-            lista_filtrada.append(item)
-    return lista_filtrada
-
 def remover_caracteres(lista_strings, caracteres_para_remover):
     """
     Remove caracteres especificados de strings em uma lista.
